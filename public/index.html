@@ -8,8 +8,16 @@
   </head>
   <body>
     <main>
-      <div id="list"></div>
-      <div id="top3"></div>
+      <section id="controls">
+        <div class="controls-title">Pairs</div>
+        <label><input type="checkbox" name="base" value="ETH" checked /> ETH/USDT</label>
+        <label><input type="checkbox" name="base" value="BTC" /> BTC/USDT</label>
+        <label><input type="checkbox" name="base" value="TRX" /> TRX/USDT</label>
+        <label><input type="checkbox" name="base" value="DOGE" /> DOGE/USDT</label>
+        <label><input type="checkbox" name="base" value="BNB" /> BNB/USDT</label>
+        <button id="refresh" type="button">Refresh</button>
+      </section>
+      <div id="results"></div>
     </main>
 
     <script src="app.js"></script>
