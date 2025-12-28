@@ -1,0 +1,17 @@
+body {
+  margin: 12px;
+}
+
+#list,
+#top3 {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin: 6px 0;
+}
