@@ -8,14 +8,53 @@
   </head>
   <body>
     <main>
+      <nav id="market-toggle">
+        <button type="button" class="market-button is-active" data-view="cex">CEX</button>
+        <button type="button" class="market-button" data-view="dex">DEX</button>
+        <button type="button" id="assets-tab" class="market-button" data-tab="assets">자산</button>
+        <div class="wallet">
+          <button type="button" id="wallet-button">지갑 연결</button>
+          <div id="wallet-panel" class="wallet-panel" aria-hidden="true">
+            <button type="button" data-wallet="metamask">MetaMask</button>
+          </div>
+        </div>
+      </nav>
       <section id="controls">
         <div class="controls-title">Pairs</div>
-        <label><input type="checkbox" name="base" value="ETH" checked /> ETH/USDT</label>
-        <label><input type="checkbox" name="base" value="BTC" /> BTC/USDT</label>
-        <label><input type="checkbox" name="base" value="TRX" /> TRX/USDT</label>
-        <label><input type="checkbox" name="base" value="DOGE" /> DOGE/USDT</label>
-        <label><input type="checkbox" name="base" value="BNB" /> BNB/USDT</label>
+        <div class="pair-dropdown">
+          <button id="pair-toggle" type="button">ETH</button>
+          <div id="pair-panel" class="pair-panel" aria-hidden="true">
+            <button type="button" class="coin-option is-selected" data-base="ETH">
+              <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029" alt="ETH logo" />
+              ETH
+            </button>
+            <button type="button" class="coin-option" data-base="BTC">
+              <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=029" alt="BTC logo" />
+              BTC
+            </button>
+            <button type="button" class="coin-option" data-base="TRX">
+              <img src="https://cryptologos.cc/logos/tron-trx-logo.png?v=029" alt="TRX logo" />
+              TRX
+            </button>
+            <button type="button" class="coin-option" data-base="DOGE">
+              <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png?v=029" alt="DOGE logo" />
+              DOGE
+            </button>
+            <button type="button" class="coin-option" data-base="BNB">
+              <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png?v=029" alt="BNB logo" />
+              BNB
+            </button>
+          </div>
+        </div>
         <button id="refresh" type="button">Refresh</button>
+        <span id="updated-at"></span>
+      </section>
+      <section id="assets" hidden>
+        <div class="assets-header">
+          <div class="assets-title">자산</div>
+          <div id="wallet-status">지갑을 연결하세요.</div>
+        </div>
+        <div id="asset-list" class="asset-list"></div>
       </section>
       <div id="results"></div>
     </main>
